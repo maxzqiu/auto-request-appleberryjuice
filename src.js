@@ -14,7 +14,7 @@ function time(){
     Min=d.substring(19,21);
 }
 
-
+checktime()
 
 function checktime(){
     time()
@@ -22,9 +22,14 @@ function checktime(){
         REQUEST.textContent="Request Sent for Apple Berry Juice at "+Hour+":"+Min;
         BUTTON.disabled="false"
     }
+    if (Hour>16 && Hour<24) {
+        REQUEST.textContent="Request Sent for Apple Berry Juice at 4:10:04 PM GMT-0800 Pacific Standard Time"
+    }
     TIME.textContent=d
     
 }
+
+
 
 BUTTON.onclick = function (){
     REQUEST.textContent="No Request"
