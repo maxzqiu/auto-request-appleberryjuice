@@ -12,17 +12,22 @@ function time(){
     Day=d.substring(0,3);
     Hour=d.substring(16,18);
     Min=d.substring(19,21);
+    Min=parseInt(Min)
+    Hour=parseInt(Hour)
 }
 
-checktime()
+
 
 function checktime(){
     time()
-    if (Hour===16 && Min===10 && Min===11 && Min===12 && Min===13 && Min===14 && Min===15){
+    console.log(Day)
+    console.log(Hour)
+    console.log(Min)
+    if (Hour===16 && Min>9 && Min<20 && Day==="Sun"){
         REQUEST.textContent="Request Sent for Apple Berry Juice at "+Hour+":"+Min;
         BUTTON.disabled="false"
     }
-    if (Hour>17 && Hour<24) {
+    if (Hour>16 && Hour<24) {
         REQUEST.textContent="Request Sent for Apple Berry Juice at 4:10:04 PM GMT-0800 Pacific Standard Time"
     } else if (Hour===16 && Min>9){
         REQUEST.textContent="Request Sent for Apple Berry Juice at 4:10:04 PM GMT-0800 Pacific Standard Time"
@@ -31,13 +36,10 @@ function checktime(){
     
 }
 
-
-
-BUTTON.onclick = function (){
-    REQUEST.textContent="No Request"
-    BUTTON.disabled="true"
-    RESETTIME.textContent=new Date()
-}
-
+checktime()
 setInterval(checktime, 60000)
+
+
+
+
 
