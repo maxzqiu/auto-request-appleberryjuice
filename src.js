@@ -27,9 +27,9 @@ function checktime(){
         REQUEST.textContent="Request Sent for Apple Berry Juice at "+Hour+":"+Min;
         BUTTON.disabled="false"
     }
-    if (Hour>16 && Hour<24) {
+    if (Hour>16 && Hour<24 && Day==="Sun") {
         REQUEST.textContent="Request Sent for Apple Berry Juice at 4:10:04 PM GMT-0800 Pacific Standard Time"
-    } else if (Hour===16 && Min>9){
+    } else if (Hour===16 && Min>9 && Day==="Sun"){
         REQUEST.textContent="Request Sent for Apple Berry Juice at 4:10:04 PM GMT-0800 Pacific Standard Time"
     }
     TIME.textContent=d
